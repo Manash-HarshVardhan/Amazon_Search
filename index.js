@@ -91,10 +91,7 @@ fetch(apiUrl)
                 // createCard(filterItem);
             }else{
               hideDrop();
-                let p1=document.createElement('p');
-                p1.classList.add('productdetails--title');
-                p1.textContent='Sorry no item match your search😕';
-                contentsection.appendChild(p1);
+                
             }
             
         }else{
@@ -128,7 +125,7 @@ fetch(apiUrl)
               div.classList.add('dropitem');
               div.addEventListener('click',()=>{
                    createCard([item]);//converting obj into arr for looping
-                  searchInput.value=item.title;
+                  searchInput.value=item.brand;
                   hideDrop();
               });
               
