@@ -5,10 +5,6 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-.bordertest {
-  border: 3px solid red;
-}
-
 .siteheader {
   margin-top: 10px;
   padding: 10px;
@@ -17,8 +13,11 @@
   text-align: center;
 }
 .siteheader--searchcontainer {
+  position: relative;
+  justify-content: center;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 20px;
 }
 .siteheader--searchcontainer--searchbox {
   width: 70%;
@@ -31,11 +30,23 @@
 .siteheader--searchcontainer--searchbox::placeholder {
   padding: 5px;
 }
-.siteheader--searchcontainer--searchbtn {
-  height: 28px;
-  width: 60px;
-  font-size: 16px;
-  font-weight: 600;
+.siteheader--searchcontainer--dropdown {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 70px;
+  margin: auto;
+  width: 68%;
+  border: 1px solid #4a4a4a;
+  border-top: 0;
+  z-index: 10;
+  max-height: 10rem;
+  overflow-x: auto;
+  display: none;
+}
+.siteheader--searchcontainer--chkbox {
+  height: 15px;
+  width: 15px;
 }
 
 .contentsection {
@@ -44,8 +55,10 @@
   gap: 10px;
   overflow: hidden;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .contentsection--card {
+  cursor: pointer;
   text-align: center;
   width: 250px;
   height: 400px;
@@ -56,6 +69,7 @@
   padding: 10px;
   position: relative;
   border: 1px solid gray;
+  transition: all 0.2s;
 }
 .contentsection--card--productid {
   width: 45px;
@@ -75,7 +89,20 @@
   width: 220px;
   height: 200px;
 }
+.contentsection--card:hover {
+  scale: 1.01;
+}
 
 .productdetails--title {
   font-size: 14px;
+}
+
+.dropitem {
+  background-color: white;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropitem:hover {
+  background: rgb(214, 213, 213);
 }/*# sourceMappingURL=style.css.map */

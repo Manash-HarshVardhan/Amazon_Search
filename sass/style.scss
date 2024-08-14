@@ -5,20 +5,21 @@
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-.bordertest{
-    border: 3px solid red;
-}
-
 .siteheader{
+    
     margin-top: 10px;
     padding: 10px;
     &--heading{
         text-align: center;
     }
     &--searchcontainer{
+       position: relative;
+        justify-content: center;
         display: flex;
-        gap: 10px;
+        align-items: center;
+        gap: 20px;
         &--searchbox{
+           
             width: 70%;
             height: 30px;
             padding: 5px;
@@ -26,11 +27,23 @@
         &--searchbox::placeholder{
             padding: 5px;
         }
-        &--searchbtn{
-            height: 28px;
-            width: 60px;
-            font-size: 16px;
-            font-weight: 600;
+        &--dropdown{
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 70px;
+            margin: auto;
+            width: 68%;
+            border: 1px solid #4a4a4a; 
+            border-top: 0;
+            z-index: 10;
+            max-height: 10rem;
+            overflow-x: auto;
+            display: none;
+        }
+        &--chkbox{
+            height: 15px;
+            width: 15px;
         }
     }
 }
@@ -41,9 +54,10 @@
     gap: 10px;
     overflow: hidden;
     flex-wrap: wrap;
-   
+    justify-content: center;
     &--card{
         // flex-grow:1;
+        cursor: pointer;
         text-align: center;
         width: 250px;
         height: 400px;
@@ -54,6 +68,8 @@
         padding: 10px;
         position: relative;
         border: 1px solid gray;
+        transition: all 0.2s;
+        
         &--productid{
             width: 45px;
             height: 25px;
@@ -69,14 +85,27 @@
             padding-top: 5px;
         }
         &--productimg{
+            
             width: 220px;
             height: 200px;
         }
     }
+    &--card:hover{
+        scale: 1.01;
+     }
 }
 
 .productdetails{
     &--title{
         font-size: 14px;
     }
+}
+
+.dropitem{
+    background-color: white;
+    padding: 8px;
+    cursor: pointer;
+}
+.dropitem:hover{
+    background: rgb(214, 213, 213);
 }
