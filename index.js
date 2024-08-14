@@ -45,7 +45,12 @@ fetch(apiUrl)
     
             let productprice=document.createElement('h4');
             productprice.classList.add('productdetails--price');
-            productprice.textContent=`$ ${field.price}`;
+            productprice.textContent=`New Price $ ${field.price}`;
+
+            let productOldprice=document.createElement('h5');
+            productOldprice.textContent=`Old Price ${field.oldPrice}`;
+            productOldprice.style.textDecoration='line-through';
+            productOldprice.style.color='red';
 
             let productdesc=document.createElement('p');
             productdesc.classList.add('productdetails--price');
@@ -63,6 +68,7 @@ fetch(apiUrl)
             card.appendChild(imgtag)
             card.appendChild(producttitle)
             card.appendChild(productprice)
+            card.appendChild(productOldprice)
             card.appendChild(productdesc)
             card.appendChild(imgcontainer)
             contentsection.appendChild(card);
